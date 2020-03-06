@@ -27,4 +27,10 @@ public class CheckOddEvenTest {
 
         assertEquals(oddEvenChecker.checkNumber(number), "Odd Number");
     }
+
+    @Test
+    public void printBye() {
+        System.out.println("BYE");
+    }
+
 }

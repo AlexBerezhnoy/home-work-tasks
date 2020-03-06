@@ -12,6 +12,12 @@ public class DiscountCountChecker {
 
 //        TODO implements result
         double result = 0.0;
+        if (price >= 1000) {
+            result = price - price * 0.15;
+            System.out.println("Скидка составляет "+result);
+        } else {
+            System.out.println("Скидка не предоставляется");
+        }
 
         return result;
     }

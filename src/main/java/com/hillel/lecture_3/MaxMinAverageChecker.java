@@ -13,6 +13,9 @@ public class MaxMinAverageChecker {
 //        TODO implements result
         int result = 0;
 
+        if (a > b && a > c) result = a;
+        else if (b > a && b > c) result = b;
+        else if (c > a && c > b) result = c;
         return result;
     }
 
@@ -21,7 +24,9 @@ public class MaxMinAverageChecker {
 
 //        TODO implements result
         int result = 0;
-
+        if (a > b && a < c || a > c && a < b ) result = a;
+        else if (b > a && b < c || b > c && b < a ) result = b;
+        else if (c > a && c < b || c > b && c < a) result = c;
         return result;
     }
 
@@ -30,7 +35,9 @@ public class MaxMinAverageChecker {
 
 //        TODO implements result
         int result = 0;
-
+        if (a < b && a < c) result = a;
+        else if (b < a && b < c) result = b;
+        else if (c < a && c < b) result = c;
         return result;
     }
 }

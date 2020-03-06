@@ -1,5 +1,6 @@
 package com.hillel.lecture_3;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -17,21 +18,23 @@ public class CheckPassFailTest {
     @Test
     public void checkFailTest() {
         int mark = 5;
-
         assertEquals(passFailChecker.checkNumber(mark), "FAIL");
     }
 
     @Test
     public void checkPassTest() {
         int mark = 70;
-
         assertEquals(passFailChecker.checkNumber(mark), "PASS");
     }
 
     @Test
     public void checkPassBoundaryTest() {
         int mark = 50;
-
         assertEquals(passFailChecker.checkNumber(mark), "PASS");
+    }
+
+    @Test
+    public void printDone() {
+        System.out.println("DONE");
     }
 }
