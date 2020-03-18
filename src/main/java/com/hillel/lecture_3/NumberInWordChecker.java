@@ -9,7 +9,6 @@ public class NumberInWordChecker {
 
     @Step
     public String getNumberIfElse(int number) {
-        //        TODO implements result
         String result = "";
         if (number == 1){
             result = "ONE";
@@ -39,7 +38,6 @@ public class NumberInWordChecker {
 
     @Step
     public String getNumberSwitchCase(int number) {
-        //        TODO implements result
         String result = "";
             switch (number) {
                 case 1:

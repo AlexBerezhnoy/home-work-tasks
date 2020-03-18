@@ -10,7 +10,6 @@ public class PassFailChecker {
     @Step
     public String checkNumber(int number) {
 
-//        TODO implements result
         String result = "";
         result = number >= 50 ? "PASS" : "FAIL";
         System.out.println(result);

@@ -9,13 +9,10 @@ public class ReverseStringChecker {
 
     @Step
     public String getReversString(String value) {
-
-
         String result = "";
         for (int i = 0; i < value.length(); i++) {
             result = result + value.charAt(value.length()-i-1);
         }
-
         return result;
     }
 

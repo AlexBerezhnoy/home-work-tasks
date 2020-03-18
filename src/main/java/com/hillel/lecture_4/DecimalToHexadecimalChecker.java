@@ -52,42 +52,37 @@ public class DecimalToHexadecimalChecker {
     public int fromHexadecimalToDecimal(String value) {
 
         int result = 0;
-// !!!stackoverflow coding
-
-//        String digits = "0123456789ABCDEF";
-//        int val = 0;
-//        for (int i = 0; i < value.length(); i++) {
-//            char c = value.charAt(i);
-//            int d = digits.indexOf(c);
-//            result = 16*result + d;
-//        }
 
         for (int i = 0; i < value.length(); i++) {
              char numeric = value.charAt(i);
             int power = (int) Math.pow( 16, value.length() - i - 1);
             switch (numeric) {
                 case 'A':
-                    result = result + 10 * power;
+                    result = result + powerToNumber (10, power);;
                     break;
                 case 'B':
-                    result = result + 11 * power;
+                    result = result + powerToNumber (11, power);;
                     break;
                 case 'C':
-                    result = result + 12 * power;
+                    result = result + powerToNumber (12, power);;
                     break;
                 case 'D':
-                    result = result + 13 * power;
+                    result = result + powerToNumber (13, power);;
                     break;
                 case 'E':
-                    result = result + 14 * power;
+                    result = result + powerToNumber (14, power);;
                     break;
                 case 'F':
-                    result = result + 15 * power;
+                    result = result + powerToNumber (15, power);
                     break;
                 default:
-                    result = result +  Character.getNumericValue(numeric) * power;
+                    result = result +  powerToNumber (Character.getNumericValue(numeric), power);
             }
         }
         return result;
     }
+    public static int powerToNumber (int number, int value) {
+        int result = value * number;
+        return result;
+    };
 }

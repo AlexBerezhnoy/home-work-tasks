@@ -9,12 +9,13 @@ public class MagnitudeChecker {
 
     @Step
     public String getGreatestNumberByMagnitude(double a, double b) {
-//        TODO implements result
+        double mathAbsA = Math.abs(a);
+        double mathAbsB = Math.abs(b);
         String result = "";
-        if (Math.abs(a) == Math.abs(b)) {
+        if (mathAbsA == mathAbsB) {
             result = "The number "+a+" and "+b+" are equals by magnitude!";
         } else {
-            result = Math.abs(a) > Math.abs(b) ? "The number " + a + " has the greatest magnitude!" : "The number " + b + " has the greatest magnitude!";
+            result = mathAbsA > mathAbsB ? "The number " + a + " has the greatest magnitude!" : "The number " + b + " has the greatest magnitude!";
         }
         return result;
     }

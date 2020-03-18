@@ -17,7 +17,7 @@ public class BinaryToDecimalChecker {
             temp = value % 2;
             result = result + temp * (int) Math.pow(10, powerNumber);
             powerNumber++;
-            value = value/2;
+            value = dividedByNumber (value,2);
         }
         return result;
     }
@@ -30,8 +30,13 @@ public class BinaryToDecimalChecker {
         while (value > 0) {
             if (value % 2 != 0) {result = result + (int) Math.pow(2, powerNumber);}
             powerNumber++;
-            value = value/10;
+            value = dividedByNumber (value,10);
         }
+        return result;
+    }
+
+    public static int dividedByNumber (int value, int number) {
+        int result =  value/number;
         return result;
     }
 }

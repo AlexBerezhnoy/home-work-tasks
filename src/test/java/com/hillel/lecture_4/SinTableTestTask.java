@@ -9,12 +9,17 @@ import java.text.DecimalFormat;
 public class SinTableTestTask {
     public static void main(String[] args) {
         int x = 0;
-        DecimalFormat df = new DecimalFormat("###.######");
+
         while (x <= 360) {
-            if (x == 360)
-                System.out.println("Sin(" + x + ") = " + df.format(Math.sin((360-x)*Math.PI/180)));
-            else  System.out.println("Sin(" + x + ") = " + df.format(Math.sin(x*Math.PI/180)));
+            if (x == 360) printResult(360 - x);
+            else  printResult (x);
             x = x + 10;
         }
     }
+
+    public static void printResult (int x) {
+        DecimalFormat df = new DecimalFormat("###.######");
+        System.out.println("Sin(" + x + ") = " + df.format(Math.sin(x*Math.PI/180)));
+    };
+
 }

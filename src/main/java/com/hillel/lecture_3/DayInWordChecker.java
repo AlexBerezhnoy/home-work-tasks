@@ -9,7 +9,6 @@ public class DayInWordChecker {
 
     @Step
     public String getDayIfElse(int number) {
-        //        TODO implements result
         String result = "";
         if (number == 1){
             result = "Monday";
@@ -33,7 +32,6 @@ public class DayInWordChecker {
 
     @Step
     public String getDaySwitchCase(int number) {
-        //        TODO implements result
         String result = "";
         switch (number) {
             case 1:

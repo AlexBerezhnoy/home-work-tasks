@@ -10,7 +10,6 @@ public class OddEvenChecker {
     @Step
     public String checkNumber(int number) {
 
-//        TODO implements result
         String result = "";
         result = (number % 2==0) ? "Even Number" :  "Odd Number";
 

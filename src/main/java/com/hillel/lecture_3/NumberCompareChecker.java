@@ -9,8 +9,6 @@ public class NumberCompareChecker {
 
     @Step
     public String getGreatestNumber(int a, int b) {
-
-//        TODO implements result
         String result = "";
         if (a == b) {
             result = "Numbers "+a+" and "+b+" are equals!";
