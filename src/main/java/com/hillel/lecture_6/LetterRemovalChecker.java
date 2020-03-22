@@ -7,13 +7,9 @@ import io.qameta.allure.Step;
  */
 public class LetterRemovalChecker {
 
-
     @Step
     public String removeLetter(String sentence, String letterFoRemove) {
-
-//        TODO implements result
-        String result = "";
-
+        String result = sentence.replaceAll(letterFoRemove, "");
         return result;
     }
 }
