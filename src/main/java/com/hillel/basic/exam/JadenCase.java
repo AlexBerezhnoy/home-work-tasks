@@ -21,19 +21,17 @@ public class JadenCase {
 
     public String toJadenCase(String phrase) {
         String result = null;
-        if (Objects.isNull(phrase) || phrase.isEmpty()){}
-        else if ( phrase.isEmpty()) {result = "";}
-        else {
-            result = "";
-            char[] sentenceChar;
-            String[] tempStringArray = phrase.split(" ");
-            for (int i = 0; i < tempStringArray.length ; i++) {
-                sentenceChar = tempStringArray[i].toCharArray();
-                sentenceChar[0] = Character.toUpperCase(sentenceChar[0]);
-                result = result + new String(sentenceChar);
-                if (i != tempStringArray.length-1) result = result + " ";
+        if (!Objects.isNull(phrase) && !phrase.isEmpty()){
+                result = "";
+                char[] sentenceChar;
+                String[] tempStringArray = phrase.split(" ");
+                for (int i = 0; i < tempStringArray.length; i++) {
+                    sentenceChar = tempStringArray[i].toCharArray();
+                    sentenceChar[0] = Character.toUpperCase(sentenceChar[0]);
+                    result = result + new String(sentenceChar);
+                    if (i != tempStringArray.length - 1) result = result + " ";
+                }
             }
-        }
         return result;
     }
 }
