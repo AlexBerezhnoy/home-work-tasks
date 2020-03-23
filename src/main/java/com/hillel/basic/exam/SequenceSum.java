@@ -28,8 +28,8 @@ public class SequenceSum {
         String result = "";
         int count = 0;
         for (int i = 0; i <= value; i++) {
-            if (i ==value) {result = result + i;}
-            else {result = result + i + "+";}
+            result = result + i;
+            if (i !=value) {result = result + "+";}
             count = count + i;
 
         }

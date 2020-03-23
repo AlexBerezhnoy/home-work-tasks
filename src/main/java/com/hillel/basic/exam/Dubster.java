@@ -27,10 +27,9 @@ public class Dubster {
 
     public static String songDecoder(String song) {
         String result ="";
-        if (song.length()>9) {
+        if (song.length()>9)
             result = song.replace("WUBWUBWUB", " ");
             result = result.replace("WUB", "");
-        }else {result = song.replace("WUB", "");}
         return result;
     }
 }
