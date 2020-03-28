@@ -28,9 +28,9 @@ public class App {
         if (expectedResult == actualResult) {
             System.out.println("The result is correct" + '\n');
         } else {
-            System.out.println("The result isn't correct!!!");
             System.out.println("Actual result :" + actualResult);
-            System.out.println("Expected result :" + expectedResult + '\n');
+            System.out.println("Expected result :" + expectedResult);
+            System.out.println("The result isn't correct!!!" + '\n');
         }
     }
 }
