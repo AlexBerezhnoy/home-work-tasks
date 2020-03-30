@@ -1,36 +1,34 @@
 package com.hillel.lecture_8;
 
-public class App {
-    public static void main(String[] args) {
-        double expectedSumResult = 0.95;
-        double expectedSubResult = 0.55;
-        double expectedMultiResult = 2.25;
-        double expectedDivResult = 0.25;
-        double term = 0.2;
-        double subtrahend = 0.2;
-        double factor = 3;
-        double divider = 3;
+import org.testng.annotations.Test;
 
-        FractionNumber fractionNumber = new FractionNumber(3,4);
-        System.out.println("Fraction Number object is  "+fractionNumber.toString() + '\n');
-        double actualResult = fractionNumber.addition(term);
-        validationResult(expectedSumResult,actualResult);
-        actualResult = fractionNumber.subtraction(subtrahend);
-        validationResult(expectedSubResult,actualResult);
-        actualResult = fractionNumber.multiplication(factor);
-        validationResult(expectedMultiResult,actualResult);
-        actualResult = fractionNumber.division(divider);
-        validationResult(expectedDivResult,actualResult);
+import static org.testng.Assert.assertEquals;
+
+public class App {
+    FractionNumber firstFractionNumber = new FractionNumber(3,4);
+    FractionNumber secondFractionNumber = new FractionNumber(2,3);
+
+    @Test
+    public void plusFractionNumberTest() {
+        FractionNumber expectedPlusResult = new FractionNumber(17, 12);
+        assertEquals(firstFractionNumber.plus(secondFractionNumber), expectedPlusResult);
     }
 
+    @Test
+    public void minusFractionNumberTest() {
+        FractionNumber expectedMinusResult = new FractionNumber(1, 12);
+        assertEquals(firstFractionNumber.minus(secondFractionNumber), expectedMinusResult);
+    }
 
-    public static void validationResult (double expectedResult, double actualResult) {
-        if (expectedResult == actualResult) {
-            System.out.println("The result is correct" + '\n');
-        } else {
-            System.out.println("Actual result :" + actualResult);
-            System.out.println("Expected result :" + expectedResult);
-            System.out.println("The result isn't correct!!!" + '\n');
-        }
+    @Test
+    public void multiplyFractionNumberTest() {
+        FractionNumber expectedMultiplyResult = new FractionNumber(6, 12);
+        assertEquals(firstFractionNumber.multiply(secondFractionNumber), expectedMultiplyResult);
+    }
+
+    @Test
+    public void devideFractionNumberTest() {
+        FractionNumber expectedDevideResult = new FractionNumber(9, 8);
+        assertEquals(firstFractionNumber.divide(secondFractionNumber), expectedDevideResult);
     }
 }

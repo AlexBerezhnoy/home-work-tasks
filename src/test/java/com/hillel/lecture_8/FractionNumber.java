@@ -1,5 +1,7 @@
 package com.hillel.lecture_8;
 
+import java.util.Objects;
+
 public class FractionNumber {
     private int numerator;
     private int denominator;
@@ -9,35 +11,50 @@ public class FractionNumber {
         this.denominator = denominator;
     }
 
-    public double addition (double term) {
-        double result =  (double) numerator/denominator + term;
-        System.out.println("Sum " + numerator + "/"+denominator + " + " + term + " = " + result);
-        return result;
+    public FractionNumber plus (FractionNumber term) {
+        int resultNumerator = this.numerator * term.denominator + term.numerator * this.denominator;
+        int resultDenominator = this.denominator * term.denominator;
+        System.out.println("Sum " + this.numerator + "/" + this.denominator + " + " + term.toString() + " = " + resultNumerator + "/" + resultDenominator );
+        return new FractionNumber(resultNumerator, resultDenominator);
     }
 
-    public double subtraction (double subtrahend) {
-        double result = (double) numerator/denominator - subtrahend;
-        System.out.println("Sub " + numerator + "/"+denominator + " - " + subtrahend + " = " + result);
-        return result;
+      public FractionNumber minus (FractionNumber term) {
+        int resultNumerator = this.numerator * term.denominator - term.numerator * this.denominator;
+        int resultDenominator = this.denominator * term.denominator;
+        System.out.println("Sub " + this.numerator + "/" + this.denominator + " - " + term.toString() + " = " + resultNumerator + "/" + resultDenominator );
+        return new FractionNumber(resultNumerator, resultDenominator);
     }
 
-    public double multiplication (double factor) {
-        double result = (double) numerator/denominator * factor;
-        System.out.println("Multi " + numerator + "/"+denominator + " * " + factor + " = " + result);
-        return  result;
+    public FractionNumber multiply (FractionNumber factor) {
+        int resultNumerator = this.numerator * factor.numerator;
+        int resultDenominator = this.denominator * factor.denominator;
+        System.out.println("Multi " + this.numerator + "/" + this.denominator + " * " + factor.toString() + " = " + resultNumerator + "/" + resultDenominator );
+        return new FractionNumber(resultNumerator, resultDenominator);
     }
 
-    public double division (double divider) {
-        double result =((double) numerator/denominator) / divider;
-        System.out.println("Div " + numerator + "/"+denominator + " : " + divider + " = " + result);
-        return  result;
+    public FractionNumber divide (FractionNumber divider) {
+        int resultNumerator = this.numerator * divider.denominator ;
+        int resultDenominator = this.denominator * divider.numerator;
+        System.out.println("Div " + this.numerator + "/" + this.denominator + " : " + divider.toString() + " = " + resultNumerator + "/" + resultDenominator );
+        return new FractionNumber(resultNumerator, resultDenominator);
     }
 
     @Override
     public String toString() {
-        return "FractionNumbers{" +
-                "numerator=" + numerator +
-                ", denominator=" + denominator +
-                '}';
+        return numerator + "/" + denominator;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FractionNumber that = (FractionNumber) o;
+        return numerator == that.numerator &&
+                denominator == that.denominator;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
     }
 }
