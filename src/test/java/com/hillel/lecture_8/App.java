@@ -1,4 +1,4 @@
-package c.h.lecture_8;
+package com.hillel.lecture_8;
 
 public class App {
     public static void main(String[] args) {
