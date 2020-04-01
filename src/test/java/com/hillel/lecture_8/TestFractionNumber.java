@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class App {
+public class TestFractionNumber {
     FractionNumber firstFractionNumber = new FractionNumber(3,4);
     FractionNumber secondFractionNumber = new FractionNumber(2,3);
 
