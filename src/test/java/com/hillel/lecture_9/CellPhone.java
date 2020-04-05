@@ -27,14 +27,4 @@ public class CellPhone extends Phone {
     public String down() {
         return "Put Phone in pocket";
     }
-
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 }
