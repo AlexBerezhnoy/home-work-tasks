@@ -15,7 +15,6 @@ public class ArraysTestTask {
     public void checkReversDataTest() {
         List<String> data = Arrays.asList("one", "two", "three", "four", "five");
         List<String> result = Arrays.asList("five", "four", "three", "two", "one");
-
         assertEquals(arraysChecker.getReversList(data), result);
     }
 
